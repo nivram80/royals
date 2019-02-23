@@ -9,22 +9,21 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
-import {
-  MatchResults,
-} from '@stencil/router';
 
 
 export namespace Components {
 
-  interface AppHome {}
-  interface AppHomeAttributes extends StencilHTMLAttributes {}
+  interface RoyalsButton {
+    'title': string;
+    'type': string;
+  }
+  interface RoyalsButtonAttributes extends StencilHTMLAttributes {
+    'title'?: string;
+    'type'?: string;
+  }
 
-  interface AppProfile {
-    'match': MatchResults;
-  }
-  interface AppProfileAttributes extends StencilHTMLAttributes {
-    'match'?: MatchResults;
-  }
+  interface RoyalsHome {}
+  interface RoyalsHomeAttributes extends StencilHTMLAttributes {}
 
   interface HamburgerMenu {}
   interface HamburgerMenuAttributes extends StencilHTMLAttributes {}
@@ -37,38 +36,43 @@ export namespace Components {
 
   interface RoyalsRoot {}
   interface RoyalsRootAttributes extends StencilHTMLAttributes {}
+
+  interface RoyalsRoster {}
+  interface RoyalsRosterAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'AppHome': Components.AppHome;
-    'AppProfile': Components.AppProfile;
+    'RoyalsButton': Components.RoyalsButton;
+    'RoyalsHome': Components.RoyalsHome;
     'HamburgerMenu': Components.HamburgerMenu;
     'KcLogo': Components.KcLogo;
     'MlbLogo': Components.MlbLogo;
     'RoyalsRoot': Components.RoyalsRoot;
+    'RoyalsRoster': Components.RoyalsRoster;
   }
 
   interface StencilIntrinsicElements {
-    'app-home': Components.AppHomeAttributes;
-    'app-profile': Components.AppProfileAttributes;
+    'royals-button': Components.RoyalsButtonAttributes;
+    'royals-home': Components.RoyalsHomeAttributes;
     'hamburger-menu': Components.HamburgerMenuAttributes;
     'kc-logo': Components.KcLogoAttributes;
     'mlb-logo': Components.MlbLogoAttributes;
     'royals-root': Components.RoyalsRootAttributes;
+    'royals-roster': Components.RoyalsRosterAttributes;
   }
 
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
+  interface HTMLRoyalsButtonElement extends Components.RoyalsButton, HTMLStencilElement {}
+  var HTMLRoyalsButtonElement: {
+    prototype: HTMLRoyalsButtonElement;
+    new (): HTMLRoyalsButtonElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
+  interface HTMLRoyalsHomeElement extends Components.RoyalsHome, HTMLStencilElement {}
+  var HTMLRoyalsHomeElement: {
+    prototype: HTMLRoyalsHomeElement;
+    new (): HTMLRoyalsHomeElement;
   };
 
   interface HTMLHamburgerMenuElement extends Components.HamburgerMenu, HTMLStencilElement {}
@@ -95,22 +99,30 @@ declare global {
     new (): HTMLRoyalsRootElement;
   };
 
+  interface HTMLRoyalsRosterElement extends Components.RoyalsRoster, HTMLStencilElement {}
+  var HTMLRoyalsRosterElement: {
+    prototype: HTMLRoyalsRosterElement;
+    new (): HTMLRoyalsRosterElement;
+  };
+
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement
-    'app-profile': HTMLAppProfileElement
+    'royals-button': HTMLRoyalsButtonElement
+    'royals-home': HTMLRoyalsHomeElement
     'hamburger-menu': HTMLHamburgerMenuElement
     'kc-logo': HTMLKcLogoElement
     'mlb-logo': HTMLMlbLogoElement
     'royals-root': HTMLRoyalsRootElement
+    'royals-roster': HTMLRoyalsRosterElement
   }
 
   interface ElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
+    'royals-button': HTMLRoyalsButtonElement;
+    'royals-home': HTMLRoyalsHomeElement;
     'hamburger-menu': HTMLHamburgerMenuElement;
     'kc-logo': HTMLKcLogoElement;
     'mlb-logo': HTMLMlbLogoElement;
     'royals-root': HTMLRoyalsRootElement;
+    'royals-roster': HTMLRoyalsRosterElement;
   }
 
 
