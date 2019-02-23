@@ -1,13 +1,20 @@
-import { Component } from "@stencil/core";
+import { Component } from '@stencil/core';
 
 @Component({
-  tag: "mlb-logo",
-  styleUrl: "mlb-logo.scss"
+  tag: 'mlb-logo',
+  styleUrl: 'mlb-logo.scss'
 })
 export class MlbLogo {
+  routeToMlb = () => {
+    window.location.replace('https://www.mlb.com');
+  };
   render() {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.955 74.842">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 125.955 74.842"
+        onClick={this.routeToMlb}
+      >
         <path
           d="M10.282 67.691C4.604 67.691 0 63.087 0 57.408V10.283C0 4.603 4.604 0 10.282 0h105.39c5.678 0 10.282 4.603 10.282 10.283v47.125c0 5.679-4.604 10.283-10.282 10.283H10.282z"
           fill="#fff"

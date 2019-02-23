@@ -16,15 +16,6 @@ import {
 
 export namespace Components {
 
-  interface HamburgerMenu {}
-  interface HamburgerMenuAttributes extends StencilHTMLAttributes {}
-
-  interface KcLogo {}
-  interface KcLogoAttributes extends StencilHTMLAttributes {}
-
-  interface MlbLogo {}
-  interface MlbLogoAttributes extends StencilHTMLAttributes {}
-
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
@@ -35,29 +26,50 @@ export namespace Components {
     'match'?: MatchResults;
   }
 
+  interface HamburgerMenu {}
+  interface HamburgerMenuAttributes extends StencilHTMLAttributes {}
+
+  interface KcLogo {}
+  interface KcLogoAttributes extends StencilHTMLAttributes {}
+
+  interface MlbLogo {}
+  interface MlbLogoAttributes extends StencilHTMLAttributes {}
+
   interface RoyalsRoot {}
   interface RoyalsRootAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'AppHome': Components.AppHome;
+    'AppProfile': Components.AppProfile;
     'HamburgerMenu': Components.HamburgerMenu;
     'KcLogo': Components.KcLogo;
     'MlbLogo': Components.MlbLogo;
-    'AppHome': Components.AppHome;
-    'AppProfile': Components.AppProfile;
     'RoyalsRoot': Components.RoyalsRoot;
   }
 
   interface StencilIntrinsicElements {
+    'app-home': Components.AppHomeAttributes;
+    'app-profile': Components.AppProfileAttributes;
     'hamburger-menu': Components.HamburgerMenuAttributes;
     'kc-logo': Components.KcLogoAttributes;
     'mlb-logo': Components.MlbLogoAttributes;
-    'app-home': Components.AppHomeAttributes;
-    'app-profile': Components.AppProfileAttributes;
     'royals-root': Components.RoyalsRootAttributes;
   }
 
+
+  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
+  var HTMLAppHomeElement: {
+    prototype: HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
+  };
+
+  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
+  var HTMLAppProfileElement: {
+    prototype: HTMLAppProfileElement;
+    new (): HTMLAppProfileElement;
+  };
 
   interface HTMLHamburgerMenuElement extends Components.HamburgerMenu, HTMLStencilElement {}
   var HTMLHamburgerMenuElement: {
@@ -77,18 +89,6 @@ declare global {
     new (): HTMLMlbLogoElement;
   };
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
   interface HTMLRoyalsRootElement extends Components.RoyalsRoot, HTMLStencilElement {}
   var HTMLRoyalsRootElement: {
     prototype: HTMLRoyalsRootElement;
@@ -96,20 +96,20 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-home': HTMLAppHomeElement
+    'app-profile': HTMLAppProfileElement
     'hamburger-menu': HTMLHamburgerMenuElement
     'kc-logo': HTMLKcLogoElement
     'mlb-logo': HTMLMlbLogoElement
-    'app-home': HTMLAppHomeElement
-    'app-profile': HTMLAppProfileElement
     'royals-root': HTMLRoyalsRootElement
   }
 
   interface ElementTagNameMap {
+    'app-home': HTMLAppHomeElement;
+    'app-profile': HTMLAppProfileElement;
     'hamburger-menu': HTMLHamburgerMenuElement;
     'kc-logo': HTMLKcLogoElement;
     'mlb-logo': HTMLMlbLogoElement;
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'royals-root': HTMLRoyalsRootElement;
   }
 

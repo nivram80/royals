@@ -1,0 +1,10 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin default-box-shadow() {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
