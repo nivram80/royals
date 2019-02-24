@@ -1,0 +1,7 @@
+.player {
+  @include flex(row, space-between, center);
+}
+
+.info {
+  @include flex(row, flex-end, center);
+}

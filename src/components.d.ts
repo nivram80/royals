@@ -34,6 +34,13 @@ export namespace Components {
   interface MlbLogo {}
   interface MlbLogoAttributes extends StencilHTMLAttributes {}
 
+  interface RoyalsPlayer {
+    'player': any;
+  }
+  interface RoyalsPlayerAttributes extends StencilHTMLAttributes {
+    'player'?: any;
+  }
+
   interface RoyalsRoot {}
   interface RoyalsRootAttributes extends StencilHTMLAttributes {}
 
@@ -48,6 +55,7 @@ declare global {
     'HamburgerMenu': Components.HamburgerMenu;
     'KcLogo': Components.KcLogo;
     'MlbLogo': Components.MlbLogo;
+    'RoyalsPlayer': Components.RoyalsPlayer;
     'RoyalsRoot': Components.RoyalsRoot;
     'RoyalsRoster': Components.RoyalsRoster;
   }
@@ -58,6 +66,7 @@ declare global {
     'hamburger-menu': Components.HamburgerMenuAttributes;
     'kc-logo': Components.KcLogoAttributes;
     'mlb-logo': Components.MlbLogoAttributes;
+    'royals-player': Components.RoyalsPlayerAttributes;
     'royals-root': Components.RoyalsRootAttributes;
     'royals-roster': Components.RoyalsRosterAttributes;
   }
@@ -93,6 +102,12 @@ declare global {
     new (): HTMLMlbLogoElement;
   };
 
+  interface HTMLRoyalsPlayerElement extends Components.RoyalsPlayer, HTMLStencilElement {}
+  var HTMLRoyalsPlayerElement: {
+    prototype: HTMLRoyalsPlayerElement;
+    new (): HTMLRoyalsPlayerElement;
+  };
+
   interface HTMLRoyalsRootElement extends Components.RoyalsRoot, HTMLStencilElement {}
   var HTMLRoyalsRootElement: {
     prototype: HTMLRoyalsRootElement;
@@ -111,6 +126,7 @@ declare global {
     'hamburger-menu': HTMLHamburgerMenuElement
     'kc-logo': HTMLKcLogoElement
     'mlb-logo': HTMLMlbLogoElement
+    'royals-player': HTMLRoyalsPlayerElement
     'royals-root': HTMLRoyalsRootElement
     'royals-roster': HTMLRoyalsRosterElement
   }
@@ -121,6 +137,7 @@ declare global {
     'hamburger-menu': HTMLHamburgerMenuElement;
     'kc-logo': HTMLKcLogoElement;
     'mlb-logo': HTMLMlbLogoElement;
+    'royals-player': HTMLRoyalsPlayerElement;
     'royals-root': HTMLRoyalsRootElement;
     'royals-roster': HTMLRoyalsRosterElement;
   }

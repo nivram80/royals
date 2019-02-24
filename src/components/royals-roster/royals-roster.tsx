@@ -1,10 +1,9 @@
 import { Component, State } from '@stencil/core';
-import { royals } from '../../royals';
+import { royalsFortyMan } from '../../royals-forty-man';
 
 // const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-// const BASE_URL = 'http://api.sportradar.us/mlb/trial/v6.5/en/';
-// const API_KEY = 'yw5ncmwh94mndt6u4wryxfzf';
-// const ROYALS_TEAM_ID = '833a51a9-0d84-410f-bd77-da08c3e5e26e';
+// const BASE_URL = `http://lookup-service-prod.mlb.com/json/`;
+// const FORTY_MAN_URL = `named.roster_40.bam`;
 
 @Component({
   tag: 'royals-roster',
@@ -13,21 +12,86 @@ import { royals } from '../../royals';
 })
 export class RoyalsRoster {
   @State() players: Array<any>;
+  @State() catchers = [];
+  @State() pitchers = [];
+  @State() infielders = [];
+  @State() outfielders = [];
 
   componentWillLoad() {
-    this.players = royals.players;
-    // fetch(
-    //   `${PROXY_URL}${BASE_URL}teams/${ROYALS_TEAM_ID}/profile.json?api_key=${API_KEY}`
-    // )
+    return this.sortPlayersByPosition(
+      royalsFortyMan.roster_40.queryResults.row
+    );
+    // return fetch(`${PROXY_URL}${BASE_URL}${FORTY_MAN_URL}?team_id=118`)
     //   .then((response: Response) => response.json())
     //   .then(response => {
-    //     this.players = response.players;
+    //     this.players = response.roster_40.queryResults.row;
     //   });
   }
 
-  render() {
-    return this.players.map(player => {
-      return <div>{player.full_name}</div>;
+  componentDidUnload() {
+    this.catchers = [];
+    this.pitchers = [];
+    this.infielders = [];
+    this.outfielders = [];
+  }
+
+  sortPlayersByPosition(players) {
+    players.forEach(player => {
+      switch (player.position_txt) {
+        case 'C':
+          this.catchers.push(player);
+          break;
+        case 'P':
+          this.pitchers.push(player);
+          break;
+        case '1B':
+        case '2B':
+        case '3B':
+        case 'SS':
+          this.infielders.push(player);
+          break;
+        case 'RF':
+        case 'CF':
+        case 'LF':
+          this.outfielders.push(player);
+          break;
+        default:
+          console.log('No position defined.');
+      }
     });
+  }
+
+  render() {
+    return (
+      <div class="players">
+        <div class="catchers">
+          <h2>Catchers</h2>
+          {this.catchers.map(player => {
+            return <royals-player player={player} />;
+          })}
+        </div>
+
+        <div class="infielders">
+          <h2>Infielders</h2>
+          {this.infielders.map(player => {
+            return <royals-player player={player} />;
+          })}
+        </div>
+
+        <div class="outfielders">
+          <h2>Outfielders</h2>
+          {this.outfielders.map(player => {
+            return <royals-player player={player} />;
+          })}
+        </div>
+
+        <div class="pitchers">
+          <h2>Pitchers</h2>
+          {this.pitchers.map(player => {
+            return <royals-player player={player} />;
+          })}
+        </div>
+      </div>
+    );
   }
 }
