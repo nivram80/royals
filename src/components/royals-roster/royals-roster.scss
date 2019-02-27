@@ -1,15 +1,17 @@
-h1 {
-  margin: 0 0 20px 0;
+h1,
+h2 {
   padding: 0;
-  font-size: $h1-size;
   color: $royal-blue;
+}
+
+h1 {
+  margin: 5px 0 20px 0;
+  font-size: $h1-size;
 }
 
 h2 {
   margin: 0 0 10px 0;
-  padding: 0;
   font-size: $h2-size;
-  color: $royal-blue;
 }
 
 .position {

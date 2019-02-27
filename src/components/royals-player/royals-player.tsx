@@ -1,5 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { Player } from '../../interfaces/types';
+import { getAge } from '../../utilities/date-utilities';
 
 @Component({
   tag: 'royals-player',
@@ -20,6 +21,7 @@ export class RoyalsPlayer {
           <div class="bats-throws">
             {this.player.bats}/{this.player.throws}
           </div>
+          <div class="age">{getAge(this.player.birth_date)}</div>
         </div>
       </div>
     );

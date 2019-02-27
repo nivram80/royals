@@ -15,6 +15,7 @@ export class RoyalsRosterHeader {
         </div>
         <div class="right-header">
           <div class="bats-throws">B/T</div>
+          <div class="age">Age</div>
         </div>
       </header>
     );
