@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+import { Player } from '../../interfaces/types';
 
 @Component({
   tag: 'royals-player',
@@ -6,7 +7,7 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 export class RoyalsPlayer {
-  @Prop() player;
+  @Prop() player: Player;
 
   render() {
     return (

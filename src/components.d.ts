@@ -9,16 +9,19 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import {
+  Player,
+} from './interfaces/types';
 
 
 export namespace Components {
 
   interface RoyalsButton {
-    'title': string;
+    'text': string;
     'type': string;
   }
   interface RoyalsButtonAttributes extends StencilHTMLAttributes {
-    'title'?: string;
+    'text'?: string;
     'type'?: string;
   }
 
@@ -35,10 +38,10 @@ export namespace Components {
   interface MlbLogoAttributes extends StencilHTMLAttributes {}
 
   interface RoyalsPlayer {
-    'player': any;
+    'player': Player;
   }
   interface RoyalsPlayerAttributes extends StencilHTMLAttributes {
-    'player'?: any;
+    'player'?: Player;
   }
 
   interface RoyalsRoot {}

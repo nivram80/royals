@@ -1,7 +1,8 @@
 header {
   @include flex(row, space-between, center);
-  font-size: 12px;
+  font-size: $header-size;
   border-bottom: 1px solid $light-gray;
+  padding: 0 5px;
 }
 
 .left-header {

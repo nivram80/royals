@@ -5,8 +5,15 @@
 
 .player {
   @include flex(row, space-between, center);
-  font-size: 14px;
+  font-size: $row-size;
   height: 35px;
+  padding: 0 5px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: $royal-gold;
+    color: $white;
+  }
 }
 
 .back-of-jersey {

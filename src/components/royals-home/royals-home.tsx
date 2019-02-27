@@ -10,7 +10,7 @@ export class RoyalsHome {
     return (
       <div>
         <stencil-route-link url="/roster">
-          <royals-button title="Roster" type="primary" />
+          <royals-button text="Roster" type="primary" />
         </stencil-route-link>
       </div>
     );

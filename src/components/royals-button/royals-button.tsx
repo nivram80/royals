@@ -5,10 +5,10 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'royals-button.scss'
 })
 export class RoyalsButton {
-  @Prop() title: string;
+  @Prop() text: string;
   @Prop() type: string;
 
   render() {
-    return <button class={this.type}>{this.title}</button>;
+    return <button class={this.type}>{this.text}</button>;
   }
 }
