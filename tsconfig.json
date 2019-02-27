@@ -4,7 +4,6 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "allowJs": true,
     "lib": ["dom", "es2015"],
     "moduleResolution": "node",
     "module": "esnext",

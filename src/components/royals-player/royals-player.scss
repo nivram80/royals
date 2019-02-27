@@ -1,7 +1,22 @@
+:host {
+  display: block;
+  border-bottom: 1px solid $light-gray;
+}
+
 .player {
   @include flex(row, space-between, center);
+  font-size: 14px;
+  height: 35px;
+}
+
+.back-of-jersey {
+  @include flex(row, flex-start, center);
 }
 
 .info {
   @include flex(row, flex-end, center);
+}
+
+.number {
+  width: 30px;
 }

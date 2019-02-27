@@ -44,6 +44,9 @@ export namespace Components {
   interface RoyalsRoot {}
   interface RoyalsRootAttributes extends StencilHTMLAttributes {}
 
+  interface RoyalsRosterHeader {}
+  interface RoyalsRosterHeaderAttributes extends StencilHTMLAttributes {}
+
   interface RoyalsRoster {}
   interface RoyalsRosterAttributes extends StencilHTMLAttributes {}
 }
@@ -57,6 +60,7 @@ declare global {
     'MlbLogo': Components.MlbLogo;
     'RoyalsPlayer': Components.RoyalsPlayer;
     'RoyalsRoot': Components.RoyalsRoot;
+    'RoyalsRosterHeader': Components.RoyalsRosterHeader;
     'RoyalsRoster': Components.RoyalsRoster;
   }
 
@@ -68,6 +72,7 @@ declare global {
     'mlb-logo': Components.MlbLogoAttributes;
     'royals-player': Components.RoyalsPlayerAttributes;
     'royals-root': Components.RoyalsRootAttributes;
+    'royals-roster-header': Components.RoyalsRosterHeaderAttributes;
     'royals-roster': Components.RoyalsRosterAttributes;
   }
 
@@ -114,6 +119,12 @@ declare global {
     new (): HTMLRoyalsRootElement;
   };
 
+  interface HTMLRoyalsRosterHeaderElement extends Components.RoyalsRosterHeader, HTMLStencilElement {}
+  var HTMLRoyalsRosterHeaderElement: {
+    prototype: HTMLRoyalsRosterHeaderElement;
+    new (): HTMLRoyalsRosterHeaderElement;
+  };
+
   interface HTMLRoyalsRosterElement extends Components.RoyalsRoster, HTMLStencilElement {}
   var HTMLRoyalsRosterElement: {
     prototype: HTMLRoyalsRosterElement;
@@ -128,6 +139,7 @@ declare global {
     'mlb-logo': HTMLMlbLogoElement
     'royals-player': HTMLRoyalsPlayerElement
     'royals-root': HTMLRoyalsRootElement
+    'royals-roster-header': HTMLRoyalsRosterHeaderElement
     'royals-roster': HTMLRoyalsRosterElement
   }
 
@@ -139,6 +151,7 @@ declare global {
     'mlb-logo': HTMLMlbLogoElement;
     'royals-player': HTMLRoyalsPlayerElement;
     'royals-root': HTMLRoyalsRootElement;
+    'royals-roster-header': HTMLRoyalsRosterHeaderElement;
     'royals-roster': HTMLRoyalsRosterElement;
   }
 

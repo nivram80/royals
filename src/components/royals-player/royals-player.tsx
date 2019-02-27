@@ -11,10 +11,14 @@ export class RoyalsPlayer {
   render() {
     return (
       <div class="player">
-        <div class="full-name">{this.player.name_display_last_first}</div>
+        <div class="back-of-jersey">
+          <div class="number">{this.player.jersey_number}</div>
+          <div class="full-name">{this.player.name_display_last_first}</div>
+        </div>
         <div class="info">
-          <div class="throws">{this.player.throws}</div>
-          <div class="bats">{this.player.bats}</div>
+          <div class="bats-throws">
+            {this.player.bats}/{this.player.throws}
+          </div>
         </div>
       </div>
     );

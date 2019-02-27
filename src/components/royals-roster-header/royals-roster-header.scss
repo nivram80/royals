@@ -1,0 +1,13 @@
+header {
+  @include flex(row, space-between, center);
+  font-size: 12px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.left-header {
+  @include flex(row, space-between, center);
+}
+
+.jersey-number {
+  width: 30px;
+}

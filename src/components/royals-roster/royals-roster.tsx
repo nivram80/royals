@@ -1,9 +1,9 @@
 import { Component, State } from '@stencil/core';
 import { royalsFortyMan } from '../../royals-forty-man';
 
-// const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-// const BASE_URL = `http://lookup-service-prod.mlb.com/json/`;
-// const FORTY_MAN_URL = `named.roster_40.bam`;
+const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+const BASE_URL = `http://lookup-service-prod.mlb.com/json/`;
+const FORTY_MAN_URL = `named.roster_40.bam`;
 
 @Component({
   tag: 'royals-roster',
@@ -22,10 +22,11 @@ export class RoyalsRoster {
       royalsFortyMan.roster_40.queryResults.row
     );
     // return fetch(`${PROXY_URL}${BASE_URL}${FORTY_MAN_URL}?team_id=118`)
-    //   .then((response: Response) => response.json())
-    //   .then(response => {
-    //     this.players = response.roster_40.queryResults.row;
-    //   });
+    // .then((response: Response) => response.json())
+    // .then(response => {
+    // this.players = response.roster_40.queryResults.row;
+    // this.sortPlayersByPosition(this.players);
+    // });
   }
 
   componentDidUnload() {
@@ -66,6 +67,7 @@ export class RoyalsRoster {
       <div class="players">
         <div class="catchers">
           <h2>Catchers</h2>
+          <royals-roster-header />
           {this.catchers.map(player => {
             return <royals-player player={player} />;
           })}
@@ -73,6 +75,7 @@ export class RoyalsRoster {
 
         <div class="infielders">
           <h2>Infielders</h2>
+          <royals-roster-header />
           {this.infielders.map(player => {
             return <royals-player player={player} />;
           })}
@@ -80,6 +83,7 @@ export class RoyalsRoster {
 
         <div class="outfielders">
           <h2>Outfielders</h2>
+          <royals-roster-header />
           {this.outfielders.map(player => {
             return <royals-player player={player} />;
           })}
@@ -87,6 +91,7 @@ export class RoyalsRoster {
 
         <div class="pitchers">
           <h2>Pitchers</h2>
+          <royals-roster-header />
           {this.pitchers.map(player => {
             return <royals-player player={player} />;
           })}
