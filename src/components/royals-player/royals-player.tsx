@@ -18,6 +18,11 @@ export class RoyalsPlayer {
           <div class="full-name">{this.player.name_display_last_first}</div>
         </div>
         <div class="info">
+          <div class="college">{this.player.college}</div>
+          <div class="height">
+            {this.player.height_feet}-{this.player.height_inches}
+          </div>
+          <div class="weight">{this.player.weight}</div>
           <div class="bats-throws">
             {this.player.bats}/{this.player.throws}
           </div>

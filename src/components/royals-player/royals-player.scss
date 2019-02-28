@@ -11,8 +11,7 @@
   transition: all 0.25s ease;
 
   &:hover {
-    background-color: $royal-gold;
-    color: $white;
+    background-color: $row-hover-blue;
   }
 }
 
@@ -32,7 +31,36 @@
   width: 30px;
 }
 
+.bats-throws,
 .age {
-  width: 30px;
+  width: 40px;
   text-align: right;
+}
+
+.weight,
+.height {
+  display: none;
+  width: 50px;
+  text-align: right;
+}
+
+.college {
+  display: none;
+}
+
+.college {
+  display: none;
+}
+
+@media (min-width: 400px) {
+  .weight,
+  .height {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  .college {
+    display: block;
+  }
 }

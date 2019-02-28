@@ -14,6 +14,9 @@ export class RoyalsRosterHeader {
           <div class="full-name">Name</div>
         </div>
         <div class="right-header">
+          <div class="college">College</div>
+          <div class="height">Height</div>
+          <div class="weight">Weight</div>
           <div class="bats-throws">B/T</div>
           <div class="age">Age</div>
         </div>
