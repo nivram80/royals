@@ -11,7 +11,29 @@ header {
   @include default-box-shadow();
 }
 
-main {
+.main-container {
+  @include flex(row, flex-start, stretch);
+  position: relative;
+  left: -175px;
+  width: calc(100% + 175px);
   margin-top: 56px;
+  transition: left 0.25 ease;
+
+  &.show-nav {
+    left: 0;
+    width: 100%;
+  }
+}
+
+nav {
+  width: 175px;
+  background-color: $royal-blue;
+  flex-shrink: 0;
+}
+
+main {
+  width: 100%;
   padding: 10px;
+  box-sizing: border-box;
+  flex-grow: 0;
 }

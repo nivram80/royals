@@ -29,7 +29,9 @@ export namespace Components {
   interface RoyalsHomeAttributes extends StencilHTMLAttributes {}
 
   interface HamburgerMenu {}
-  interface HamburgerMenuAttributes extends StencilHTMLAttributes {}
+  interface HamburgerMenuAttributes extends StencilHTMLAttributes {
+    'onToggleMenu'?: (event: CustomEvent) => void;
+  }
 
   interface KcLogo {}
   interface KcLogoAttributes extends StencilHTMLAttributes {}

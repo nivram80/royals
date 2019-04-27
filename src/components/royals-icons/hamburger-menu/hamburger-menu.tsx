@@ -1,18 +1,25 @@
-import { Component } from '@stencil/core';
+import { Component, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'hamburger-menu',
   styleUrl: 'hamburger-menu.scss'
 })
 export class HamburgerMenu {
+  @Event() toggleMenu: EventEmitter;
+
+  toggleClick = () => {
+    this.toggleMenu.emit();
+  };
+
   render() {
     return (
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="32"
+        height="32"
         viewBox="0 0 20 20"
+        onClick={this.toggleClick}
       >
         <title>menu</title>
         <path
